@@ -1,16 +1,16 @@
-
+/* how many time dart function work */
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include<stdio.h>
 #include<queue>
 using namespace std;
-
+    int c = 0;
     struct state{
         int x,y;
         int dirt;
     }temp;
-    int c,counts=0;
+
 int grid[100][100], col[100][100];
 queue<state>Q;
 void BFS(){
@@ -21,6 +21,8 @@ void BFS(){
         Q.pop();
 
     if(grid[i][j-1] == 1 && col[i][j-1] == 0){
+
+
         col[i][j-1] = 1;
         temp.x = i;
         temp.y = j-1;
@@ -30,6 +32,8 @@ void BFS(){
 
     }
        if(grid[i][j+1] == 1 && col[i][j+1] == 0){
+
+
         col[i][j+1] = 1;
         temp.x = i;
         temp.y = j+1;
@@ -39,6 +43,8 @@ void BFS(){
 
     }
     if(grid[i-1][j] == 1 && col[i-1][j] == 0){
+
+
         col[i-1][j] = 1;
         temp.x = i-1;
         temp.y = j;
@@ -48,7 +54,9 @@ void BFS(){
 
     }
     if(grid[i+1][j] == 1 && col[i+1][j] == 0){
-        col[i-1][j] = 1;
+
+
+        col[i+1][j] = 1;
         temp.x = i+1;
         temp.y = j;
         Q.push(temp);
@@ -83,18 +91,23 @@ int main(){
                temp.x = i;
                temp.y = j;
                temp.dirt = grid[i][j];
-                  //  printf("x= %d, y=%d, dirt=%d",temp.x, temp.y, temp.dirt);
                Q.push(temp);
                BFS();
-               counts++;
+
             }
         }
 
     }
-    printf("Number Of Iland: %d",counts);
-
     printf("Total dart will be %d",c);
-   // printf("value of c: %d",c);
 
 }
+/*
+ 4 4
+
+ 0 0 1 1
+ 0 0 0 0
+ 1 1 0 0
+ 0 0 0 1
+*/
+
 
