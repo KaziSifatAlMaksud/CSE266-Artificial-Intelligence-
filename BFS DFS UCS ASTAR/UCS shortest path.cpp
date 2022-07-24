@@ -87,7 +87,7 @@ int main()
         scanf("%d %d %d", &u, &v, &w) ;
         temp.nd = v ;
         temp.weight = w ;
-        g[u].push_back(temp) ;
+       g [u].push_back(temp) ;
         temp.nd = u ;
         g[v].push_back(temp) ;
     }
