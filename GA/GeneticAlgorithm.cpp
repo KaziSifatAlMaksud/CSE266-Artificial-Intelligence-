@@ -125,8 +125,8 @@ void crossOver(){
 }
 void mutation(){
     for(int i =0;i<6;i++){
-    int x = rand() % 10;
-    int y = rand() % 10;
+    int x = rand() % 6;
+    int y = rand() % 7;
 
         if(binary[x][y] == 1 ){
             binary[x][y]=0;
